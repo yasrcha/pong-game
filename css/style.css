@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Gloock:regular);
+
+:root {
+    /* Color Variables */
+    --background-color: #252525;
+    --primary-color: #7588C3;
+    --ball-color: #FFFFFF;
+    --elements-color: #FFFFFF7D;
+
+    /* Dimension Variables */
+    --scenario-width: 900px;
+    --scenario-height: 600px;
+    --ball-diameter: 20px;
+    --racket-width: 10px;
+    --racket-height: 110px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: var(--background-color);
+}
+
+.scenario {
+    position: relative;
+    width: var(--scenario-width);
+    height: var(--scenario-height);
+    background-color: var(--primary-color);
+}
+
+.ball {
+    position: absolute;
+    left: calc((var(--scenario-width) - var(--ball-diameter)) / 2);
+    top: calc((var(--scenario-height) - var(--ball-diameter)) / 2);
+    width: var(--ball-diameter);
+    height: var(--ball-diameter);
+    background-color: var(--ball-color);
+    border-radius: 50%;
+}
+
+.racket {
+    position: absolute;
+    width: var(--racket-width);
+    height: var(--racket-height);
+    background-color: var(--elements-color);
+}
+
+.racket:nth-child(-n+3) {
+    top: calc( (var(--scenario-height) - var(--racket-height)) / 2 );
+}
+
+.racket:nth-child(2) {
+    left: 10px;
+}
+
+.racket:nth-child(3) {
+    right: 10px;
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+}
+
+hr {
+    border: 2px dashed var(--elements-color);
+}
+
+.points {
+    font-family: 'Gloock', serif;
+    font-size: 3rem;
+    color: var(--elements-color);
+}
