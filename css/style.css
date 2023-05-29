@@ -13,20 +13,21 @@
     --ball-diameter: 20px;
     --racket-width: 10px;
     --racket-height: 110px;
+
+    /* Font Variables */
+    --font:'Gloock', serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html, body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     height: 100%;
     background-color: var(--background-color);
+    font-family: ;
 }
 
 .scenario {
@@ -79,7 +80,17 @@ hr {
 }
 
 .points {
-    font-family: 'Gloock', serif;
+    font-family: var(--fon);
     font-size: 3rem;
     color: var(--elements-color);
+}
+
+.starting__button {
+    padding: 1rem .7rem 1rem 1rem;
+    color: var(--elements-color);
+    font-family: var(--font);
+    font-weight: bolder;
+    letter-spacing: 5px;
+    background-color: #7588C3;
+    border-radius: .6rem;
 }
